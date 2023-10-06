@@ -9,21 +9,25 @@
 </head>
 <body>
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li><p>POINT OF SALE SYSTEM</p></li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="customer-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Customer</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="store-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Store</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="placeOrder-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">PlaceOrder</button>
-    </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="assest/Ijse_logo.png" alt="ijse logo" title="ijse" width="100">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="Customer.html" id="customer-nav">Customer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Store.html" id="store-nav">Store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="PlaceOrder.html" id="place-order-nav">Place Order</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
