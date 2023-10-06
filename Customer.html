@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+  <link rel="stylesheet" href="assest/bootstrap-5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assest/fontawesome-free-6/css/all.min.css">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="container">
+    <p id="customer">Customer</p>
+    <div class="row">
+      <!--Form-->
+      <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col12">
+        <form>
+          <div class="mb-3">
+            <label for="cus_id" class="form-label">Cus_ID</label>
+            <input type="number" class="form-control" id="cus_id">
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+
+          <div class="mb-3">
+            <label for="nic" class="form-label">NIC</label>
+            <input type="text" class="form-control" id="nic">
+          </div>
+
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Enter your address" id="address" style="height: 100px"></textarea>
+            <label for="address">Address</label>
+          </div>
+
+
+          <div class="mt-4">
+            <button type="button" class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="reset" class="btn btn-warning">Reset</button>
+          </div>
+        </form>
+      </div>
+      <!--Table-->
+      <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Cus_ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">NIC</th>
+            <th scope="col">Address</th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

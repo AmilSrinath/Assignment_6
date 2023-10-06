@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlaceOrder</title>
+    <link rel="stylesheet" href="assest/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assest/fontawesome-free-6/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <p id="customer">Place Order</p>
+        <div class="row">
+            <!--Form-->
+            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col12">
+                <form>
+                    <div class="mb-3">
+                        <label for="item_id" class="form-label">Item_ID</label>
+                        <input type="number" class="form-control" id="item_id">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="qunt" class="form-label">Quantity On Hand</label>
+                        <input type="text" class="form-control" id="qunt">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="price">
+                    </div>
+
+
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-success">Add</button>
+                    </div>
+                </form>
+            </div>
+            <!--Table-->
+            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item_ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="fs-2">Total : 500</p>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Amount" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Calculate</button>
+                    </div>
+                </div>
+
+                <p class="fs-2">Cash : 50</p>
+
+                <div class="mt-4">
+                    <button type="button" class="btn btn-primary">Place Order</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
