@@ -10,8 +10,8 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="assest/Ijse_logo.png" alt="ijse logo" title="ijse" width="100">
+    <a class="navbar-brand" href="index.html">
+        <h2>POS</h2>
     </a>
 
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -45,8 +45,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="qut" class="form-label">Quantity</label>
-                    <input type="text" class="form-control" id="qut">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="text" class="form-control" id="quantity">
                 </div>
 
                 <div class="mb-3">
@@ -80,10 +80,71 @@
                     <th scope="col">Description</th>
                 </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="item-tbl-body"></tbody>
             </table>
         </div>
     </div>
 </div>
+
+<script src="assest/lib/jquery.min.js"></script>
+<script src="assest/bootstrap-5/js/bootstrap.min.js"></script>
+<script>
+    var row_index = null;
+
+    //----------------------------------Submit-------------------------------------
+    $("button[type='button']").eq(0).on("click", () => {
+        let item_id = $("#item_id").val();
+        let item_name = $("#item_name").val();
+        let quantity = $("#quantity").val();
+        let price = $("#price").val();
+        let description = $("#description").val();
+
+        let record = `<tr><td class="item_id">${item_id}</td><td class="item_name">${item_name}</td><td class="quantity">${quantity}</td><td class="price">${price}</td><td class="description">${description}</td></tr>`;
+        $("#item-tbl-body").append(record);
+
+        $("button[type='reset']").click();
+
+    });
+
+    //----------------------------------Click Row-------------------------------------
+    $("tbody").on("click", "tr", function() {
+        row_index = $(this).index();
+
+        console.log(row_index);
+
+        let item_id = $(this).find(".item_id").text();
+        let item_name = $(this).find(".item_name").text();
+        let quantity = $(this).find(".quantity").text();
+        let price = $(this).find(".price").text();
+        let description = $(this).find(".description").text();
+
+        $("#item_id").val(item_id);
+        $("#item_name").val(item_name);
+        $("#quantity").val(quantity);
+        $("#price").val(price);
+        $("#description").val(description);
+    })
+
+    //----------------------------------Update-------------------------------------
+    $("button[type='button']").eq(1).on("click", () => {
+        let item_id = $("#item_id").val();
+        let item_name = $("#item_name").val();
+        let quantity = $("#quantity").val();
+        let price = $("#price").val();
+        let description = $("#description").val();
+
+        let record = `<td class="item_id">${item_id}</td><td class="item_name">${item_name}</td><td class="quantity">${quantity}</td><td class="price">${price}</td><td class="description">${description}</td>`;
+        $("tbody>tr").eq(row_index).html(record);
+
+        $("button[type='reset']").click();
+
+    });
+
+    //----------------------------------Delete-------------------------------------
+    $("button[type='button']").eq(2).on("click", () => {
+        $("tbody>tr").eq(row_index).remove();
+        $("button[type='reset']").click();
+    })
+</script>
 </body>
 </html>

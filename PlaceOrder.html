@@ -10,8 +10,8 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="assest/Ijse_logo.png" alt="ijse logo" title="ijse" width="100">
+    <a class="navbar-brand" href="index.html">
+        <h2>POS</h2>
     </a>
 
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,20 +41,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="qunt" class="form-label">Quantity On Hand</label>
-                        <input type="text" class="form-control" id="qunt">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="quantity">
                     </div>
-
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="price" class="form-label">Price</label>
-                        <input type="text" class="form-control" id="price">
-                    </div>
-
 
                     <div class="mt-4">
                         <button type="button" class="btn btn-success">Add</button>
@@ -67,9 +56,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Item_ID</th>
-                        <th scope="col">Name</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
                         <th scope="col">Total</th>
                     </tr>
                     </thead>
@@ -93,5 +80,24 @@
             </div>
         </div>
     </div>
+
+<script src="assest/lib/jquery.min.js"></script>
+<script src="assest/bootstrap-5/js/bootstrap.min.js"></script>
+<script>
+    //----------------------------------Submit-------------------------------------
+    $("button[type='button']").eq(0).on("click", () => {
+        let item_id = $("#item_id").val();
+        let item_name = $("#item_name").val();
+        let quantity = $("#quantity").val();
+        let price = $("#price").val();
+        let description = $("#description").val();
+
+        let record = `<tr><td class="item_id">${item_id}</td><td class="item_name">${item_name}</td><td class="quantity">${quantity}</td><td class="price">${price}</td><td class="description">${description}</td></tr>`;
+        $("#item-tbl-body").append(record);
+
+        $("button[type='reset']").click();
+
+    });
+</script>
 </body>
 </html>

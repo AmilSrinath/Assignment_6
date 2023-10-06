@@ -10,8 +10,8 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="assest/Ijse_logo.png" alt="ijse logo" title="ijse" width="100">
+  <a class="navbar-brand" href="index.html">
+    <h2>POS</h2>
   </a>
 
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -75,10 +75,78 @@
             <th scope="col">Address</th>
           </tr>
           </thead>
-          <tbody></tbody>
+          <tbody id="customer-tbl-body"></tbody>
         </table>
       </div>
     </div>
   </div>
+
+
+<script src="assest/lib/jquery.min.js"></script>
+<script src="assest/bootstrap-5/js/bootstrap.min.js"></script>
+  <script>
+    var row_index = null;
+
+    //----------------------------------Submit-------------------------------------
+    $("button[type='button']").eq(0).on("click", () => {
+      let cus_id = $("#cus_id").val();
+      let name = $("#name").val();
+      let nic = $("#nic").val();
+      let address = $("#address").val();
+
+      console.log(cus_id)
+      console.log(name)
+      console.log(nic)
+      console.log(address)
+
+      let record = `<tr><td class="cus_id">${cus_id}</td><td class="name">${name}</td><td class="nic">${nic}</td><td class="address">${address}</td></tr>`;
+      $("#customer-tbl-body").append(record);
+
+      $("button[type='reset']").click();
+
+    });
+
+    //----------------------------------Click Row-------------------------------------
+    $("tbody").on("click", "tr", function() {
+      row_index = $(this).index();
+
+      console.log(row_index);
+
+      let cus_id = $(this).find(".cus_id").text();
+      let name = $(this).find(".name").text();
+      let nic = $(this).find(".nic").text();
+      let address = $(this).find(".address").text();
+
+      $("#cus_id").val(cus_id);
+      $("#name").val(name);
+      $("#nic").val(nic);
+      $("#address").val(address);
+    })
+
+    //----------------------------------Update-------------------------------------
+    $("button[type='button']").eq(1).on("click", () => {
+      let cus_id = $("#cus_id").val();
+      let name = $("#name").val();
+      let nic = $("#nic").val();
+      let address = $("#address").val();
+
+      console.log(cus_id)
+      console.log(name)
+      console.log(nic)
+      console.log(address)
+
+      let record = `<td class="cus_id">${cus_id}</td><td class="name">${name}</td><td class="nic">${nic}</td><td class="address">${address}</td>`;
+      $("tbody>tr").eq(row_index).html(record);
+
+      $("button[type='reset']").click();
+
+    });
+
+    //----------------------------------Delete-------------------------------------
+    $("button[type='button']").eq(2).on("click", () => {
+      $("tbody>tr").eq(row_index).remove();
+      $("button[type='reset']").click();
+    })
+  </script>
 </body>
 </html>
